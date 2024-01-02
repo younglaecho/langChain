@@ -28,12 +28,6 @@ def pdf_to_document(upload_file):
 if uploaded_file is not None:
     pages = pdf_to_document(uploaded_file)
 
-    # load_dotenv()
-
-    # Loader
-    loader = PyPDFLoader("good.pdf")
-    pages = loader.load_and_split()
-
 
     # Splitter
     text_splitter = RecursiveCharacterTextSplitter(
