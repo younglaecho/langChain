@@ -7,6 +7,7 @@ from langchain.schema import HumanMessage
 from langchain.prompts import PromptTemplate
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.schema import BaseOutputParser
+from langchain.llms import CTransformers
 
 
 class CommaSeparatedListOutputParser(BaseOutputParser):
@@ -70,3 +71,13 @@ if __name__ == '__main__':
     chain = chat_prompt | ChatOpenAI() | CommaSeparatedListOutputParser()
 
     print(chain.invoke({"text": "colors"}))
+
+
+    # chat_model = CTransformers(
+    #     model="llama-2-7b-chat.ggmlv3.q3_K_L.bin",
+    #     model_type="llama"
+    # )
+    #
+    # result = chat_model.invoke("How to be a Developer?")
+    # print(result)
+    # print(type(result))
